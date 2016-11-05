@@ -1,0 +1,21 @@
+
+    <%= form_for (@navigation_item) do |f| %>
+
+       <div class="form-group">
+          <%= f.label :title %><br/>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+                <div class="form-group">
+          <%= f.label :list_order %><br/>
+          <%= f.select :list_order, options_for_select(1..10), {include_blank: true}, {class: "form-control"} %>
+        </div>
+
+    <div class="col-md-12">
+        <div class="edit-save actions">
+          <%= f.submit class: 'btn btn-md btn-primary' %>
+        </div>
+    </div>
+<% end %>
+</div>
+</div>
+</div>

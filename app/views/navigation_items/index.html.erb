@@ -1,0 +1,6 @@
+<% @navigation_items.each do |n| %>
+<%= n.title %>
+<%= n.list_order %>
+<% end %> 
+
+<%= link_to"create new link", new_navigation_item_path, class:"btn btn-primary" %>
