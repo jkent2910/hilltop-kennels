@@ -11,7 +11,7 @@
 navigation_titles = ["About Us", "Boarding", "Daycare", "FAQ", "Testimonials", "Hours & Location", "Reservations"]
 i = 1
 navigation_titles.each do |title|
-  NavigationItem.create(title: title, list_order: i)
+  NavigationItem.find_or_create_by(title: title, list_order: i)
   i = i + 1
 end
 
