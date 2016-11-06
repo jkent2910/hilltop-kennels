@@ -25,10 +25,15 @@
 }
 
 .jumbotron {
-    margin-bottom: 0px;
+    
+}
+
+.jumbotron-image {
+	margin-bottom: 0px;
     background-image: url(/assets/pond.png); 
     opacity: 0.2;
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
+	
 }
