@@ -1,0 +1,25 @@
+
+    <%= form_for (@page) do |f| %>
+
+       <div class="form-group">
+          <%= f.label :title %><br/>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+               <div class="form-group">
+          <%= f.label :body %><br/>
+          <%= f.text_area :body, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :navigation_item_id %><br/>
+          <%= f.select :navigation_item_id, NavigationItem.all.map{|n| [n.title, n.id]}, {include_blank: true}, {class: "form-control"} %>
+        </div>
+
+    <div class="col-md-12">
+        <div class="edit-save actions">
+          <%= f.submit class: 'btn btn-md btn-primary' %>
+        </div>
+    </div>
+<% end %>
+</div>
+</div>
+</div>
