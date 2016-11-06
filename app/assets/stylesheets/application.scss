@@ -13,3 +13,11 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.jumbotron {
+    margin-bottom: 0px;
+    background-image: url(/assets/pond.png);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
