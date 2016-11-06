@@ -1,0 +1,9 @@
+<div class="container" style="margin-top: 174px;">
+
+	<% @pages.each do |p| %>
+	<%= p.title %>
+	<% end %> 
+
+	<%= link_to"create new page", new_page_path, class:"btn btn-primary" %>
+
+</div>
