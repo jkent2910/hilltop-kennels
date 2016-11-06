@@ -15,5 +15,14 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-sprockets
+//= require froala_editor.min.js
+//= require plugins/align.min.js
+//= require plugins/font_family.min.js
+//= require plugins/font_size.min.js
 //= require turbolinks
 //= require_tree .
+
+
+$(function() {
+    $('.page-editor').froalaEditor()
+});

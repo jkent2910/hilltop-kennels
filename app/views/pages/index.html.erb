@@ -1,9 +1,29 @@
-<div class="container" style="margin-top: 174px;">
+<div class="container page-container">
 
-	<% @pages.each do |p| %>
-	<%= p.title %>
-	<% end %> 
-
-	<%= link_to"create new page", new_page_path, class:"btn btn-primary" %>
-
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Your Pages</h3>
+      <%= link_to "Create New Page", new_page_path, class:"btn btn-primary" %>
+    </div>
+    <table>
+      <tr>
+        <th>
+          Page Title
+        </th>
+        <th>
+          Edit Page
+        </th>
+      </tr>
+      <% @pages.each do |p| %>
+        <tr>
+          <td>
+            <%= p.title %>
+          </td>
+          <td>
+            <%= link_to "Edit", edit_page_path(p), class: "btn btn-default" %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

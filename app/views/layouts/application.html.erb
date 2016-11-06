@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>HilltopKennels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -18,13 +19,16 @@
 				</button>
 				<a class="navbar-brand" href="#">Hilltop Kennels</a>
 			</div>
-			<div class="navbar-collapse collapse"> 
+			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="active"><a href="#">Home</a></li> 
 						<%  @navigation_items = NavigationItem.all %>
 							<% @navigation_items.each do |n| %>
-								<% if n.pages.count <= 1 %>
-									<li><a href="#"><%= n.title %></a></li>
+								<% if n.pages.count == 1 %>
+                  <% page = n.pages.first %>
+                  <li><%= link_to page.title, page_path(page), class: "#" %> </li>
+                <% elsif n.pages.count < 1 %>
+                  <li><a href="#"><%= n.title %></a></li>
 								<% elsif n.pages.count > 1 %>
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= n.title %><b class="caret"></b></a>
 										<ul class="dropdown-menu">
@@ -40,7 +44,7 @@
 	</div>
 
 
-
+<%= flash_messages %>
 <%= yield %>
 
 </body>

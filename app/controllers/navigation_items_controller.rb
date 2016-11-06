@@ -1,4 +1,7 @@
 class NavigationItemsController < ApplicationController
+
+  before_action :ensure_admin
+
   def index
   	@navigation_items = NavigationItem.all 
   end
@@ -24,6 +27,12 @@ class NavigationItemsController < ApplicationController
   private
   def navigation_item_params
     params.require(:navigation_item).permit(:title, :list_order)
+  end
+
+  def ensure_admin
+    unless user_signed_in? && current_user.admin?
+      redirect_to root_path, notice: "You're not allowed to perform that action."
+    end
   end
 
 end
