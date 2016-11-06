@@ -1,29 +1,36 @@
 <div class="container page-container">
-
-  <div class="row">
-    <div class="col-md-12">
-      <h3>Your Pages</h3>
-      <%= link_to "Create New Page", new_page_path, class:"btn btn-primary" %>
+    <div class="jumbotron">
+      <h1>Hello, Admin!</h1>
+      <p>You can create the page that will display when a navigation item is clicked. (pages: for example, Home, About Us, Hours & Location).</p>
+      <p><%= link_to "Create New Page", new_page_path, class:"btn btn-primary" %></p>
     </div>
-    <table>
-      <tr>
-        <th>
-          Page Title
-        </th>
-        <th>
-          Edit Page
-        </th>
-      </tr>
-      <% @pages.each do |p| %>
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Your Existing Pages</div>
+      <div class="panel-body">
+        <p>Here, below, you can view and edit all the pages that are already created.</p>
+      </div>
+
+      <!-- Table -->
+      <table class="table">
         <tr>
-          <td>
-            <%= p.title %>
-          </td>
-          <td>
-            <%= link_to "Edit", edit_page_path(p), class: "btn btn-default" %>
-          </td>
+          <th>
+            Page Title
+          </th>
+          <th>
+            Edit Page
+          </th>
         </tr>
-      <% end %>
-    </table>
-  </div>
+        <% @pages.each do |p| %>
+          <tr>
+            <td>
+              <%= p.title %>
+            </td>
+            <td>
+              <%= link_to "Edit", edit_page_path(p), class: "btn btn-default" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
 </div>
