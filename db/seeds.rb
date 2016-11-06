@@ -14,3 +14,6 @@ navigation_titles.each do |title|
   NavigationItem.create(title: title, list_order: i)
   i = i + 1
 end
+
+# Create admin user
+User.create(email: "admin@gmail.com", password: "password", password_confirmation: "password", user_type: 1)
