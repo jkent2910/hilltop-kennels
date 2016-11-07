@@ -1,10 +1,20 @@
 	<div class="jumbotron jumbotron-image">
 		<div class="container">
 			<div class="page-header">
-			  <h1>Camp Hilltop<small> a haven from home</small></h1>
-			  <p>When only the best is good enough!</p>
+        <div class="col-md-9">
+          <h1 style="color: #FC4A1a;">Camp Hilltop: a haven from home</h1>
+          <p style="color:white;">When only the best is good enough!</p>
+          <p><%= link_to "Learn more", page_path(Page.find_by(title: "About Us").id), class: "btn call-to-action-btn btn-lg" %></p>
+        </div>
+        <div class="col-md-3 logo-container">
+          <h2>Logo here</h2>
+        </div>
+        <div class="col-md-offset-9 col-md-3">
+          <h4 style="color: white;">Be sure to follow us on </h4>
+          <%= fa_icon("facebook-square 4x", class: 'facebook-icon') %>
+        </div>
 			</div>
-		  <p><%= link_to "Learn more", page_path(Page.find_by(title: "About Us").id), class: "btn btn-primary btn-lg" %></p>
+
 		</div>
 	</div>
 <div class="container welcome-container">
@@ -16,9 +26,36 @@
 
       <span style="font-style: italic;">Our mission is to provide a safe, clean, and enjoyable environment for all animals entrusted to our care.</span><br /><br />
       MAKE YOUR RESERVATIONS TODAY - your pet will thank you for it!  Call 319-363-1054 to inquire or reserve. <br/><br />
-
-      HEAR WHAT HILLTOP KENNELS CUSTOMERS ARE SAYING: <br /><br />
   		</p>
+      <hr>
+      <h3>HEAR WHAT HILLTOP KENNELS CUSTOMERS ARE SAYING: <br /><br /></h3>
+      <div class="row">
+        <div class="col-md-12 well">
+          We LOVE Hilltop Kennels!  I've been boarding dogs at Hilltop Kennels for more than 22 years.  Indoor and outdoor areas in their clean, roomy kennels
+          give dogs room to move around.  They even offer extra playtime with the animals which I love.  It gives the dogs more attention and interaction
+          while away from home.  My Lab has a large variety of allergies and can't have a number of foods/toy materials common to most dogs.  Everyone
+          is helpful and careful to avoid those things.  They ensure he receives his medication as required.  No one could ask for more friendly,
+          caring owners and staff!
+          <div class="row">
+            <div class="col-md-offset-9 col-md-3">
+              <strong>Chris B., Cedar Rapids</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 well">
+          Twelve years ago we adopted Sophie. Because we traveled often, we knew we would need to find her a "home away from home". We sure did when we started taking her to Hilltop Kennels! In the beginning I would feel guilty leaving her behind, then I realized she loved it! She would get so excited when we told her she was going to her 'spa'. Enroute to the kennel she knows when we turn left on Wilson Ave. we are close, and she starts getting excited. By the time we are there, she's so ready to get out of the van that she'll climb over us to get to the door if we take too long. After we walk around the beautiful property we check-in and she doesn't look back (even though I want her to). Regardless of how long her 'vacation' is, when I go to pick her up we'll go outside, walk around (again) and then she goes back to their door! At first that hurt, but then I realized that she loved it there.
+
+          I know when she is there, she is cared for like she is one of their own. They have always gone the 'extra mile' for us, and I honestly don't know what I would do without them!
+          <div class="row">
+            <div class="col-md-offset-9 col-md-3">
+              <strong>Kim W., North Liberty</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <p><%= link_to "Read more testimonials", page_path(Page.find_by(title: "Testimonials").id), class: "btn call-to-action-btn btn-lg" %></p>
+        </div>
+      </div>
 	</div>
 	<div class="row">
 	  <div class="col-sm-6 col-md-4" style="margin-top:40px;">
@@ -27,7 +64,9 @@
 	      <div class="caption">
 	        <h3>RESERVE NOW</h3>
 	        <p>We offer spacious, climate-controlled playrooms that are 100% fully supervised. We fill up quickly.</p>
-	        <p><a href="#" class="btn btn-primary" role="button">Reserve</a> <a href="#" class="btn btn-default" role="button">More Info</a></p>
+	        <p><%= link_to "Reserve", page_path(Page.find_by(title: "Reservations").id), class: "btn btn-teal" %>
+             <%= link_to "More Info", page_path(Page.find_by(title: "About Us").id), class: "btn btn-yellow" %>
+          </p>
 	      </div>
 	    </div>
 	  </div>

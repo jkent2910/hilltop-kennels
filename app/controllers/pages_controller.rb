@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_action :ensure_admin
+  before_action :ensure_admin, except: [:show]
 
   def index
   	@pages = Page.all 

@@ -2,7 +2,7 @@
     <div class="jumbotron">
       <h1>Hello, Admin!</h1>
       <p>You can create what shows up in your navigation here (navigation items: for example, Home, About Us, Hours & Location).</p>
-      <p><%= link_to "Create New Navigation Item", new_navigation_item_path, class:"btn btn-primary" %></p>
+      <p><%= link_to "Create New Navigation Item", new_navigation_item_path, class:"btn btn-yellow" %></p>
     </div>
     <div class="panel panel-default admin-table">
       <!-- Default panel contents -->
@@ -40,7 +40,7 @@
               <%= link_to "Edit", edit_navigation_item_path(n), class: "btn btn-default" %>
             </td>
             <td>
-              <%= link_to "Delete", navigation_item(n), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+              <%= link_to "Delete", navigation_item_path(n), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
             </td>
           </tr>
         <% end %>
