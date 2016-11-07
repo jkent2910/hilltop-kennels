@@ -99,3 +99,13 @@ p {
 .welcome-container {
   margin-bottom: 100px;
 }
+
+.sidebar-div {
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 425px) {
+  .sidebar-div {
+    margin-top: 200px;
+  }
+}
