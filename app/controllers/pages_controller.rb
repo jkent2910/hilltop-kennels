@@ -10,6 +10,21 @@ class PagesController < ApplicationController
      @page = Page.new
   end
 
+  def edit
+    @page = Page.find(params[:id])
+  end
+
+  def update
+    @page = Page.find(params[:id])
+    respond_to do |format|
+      if @page.update(page_params)
+        format.html { redirect_to pages_path, notice: "Page updated" }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
   def create
     @page = Page.new(page_params)
 
@@ -24,8 +39,17 @@ class PagesController < ApplicationController
     end
   end
 
+  def destroy
+    @page = Page.find(params[:id])
+
+    @page.destroy
+    respond_to do |format|
+      format.html { redirect_to pages_path, notice: "Page Deleted" }
+    end
+  end
+
   def show
-       @page = Page.find(params[:id])
+    @page = Page.find(params[:id])
   end 
 
   private

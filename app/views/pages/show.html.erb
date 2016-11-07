@@ -1,3 +1,5 @@
-<div class="container page-container fr-view">
-  <%= @page.body %>
+<div class="container page-container">
+  <div class="fr-view">
+    <%= @page.body.html_safe %>
+  </div>
 </div>

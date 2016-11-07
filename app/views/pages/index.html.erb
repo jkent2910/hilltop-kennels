@@ -4,7 +4,7 @@
       <p>You can create the page that will display when a navigation item is clicked. (pages: for example, Home, About Us, Hours & Location).</p>
       <p><%= link_to "Create New Page", new_page_path, class:"btn btn-primary" %></p>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default admin-table">
       <!-- Default panel contents -->
       <div class="panel-heading">Your Existing Pages</div>
       <div class="panel-body">
@@ -20,6 +20,12 @@
           <th>
             Edit Page
           </th>
+          <th>
+            View Page
+          </th>
+          <th>
+            Delete Page
+          </th>
         </tr>
         <% @pages.each do |p| %>
           <tr>
@@ -27,7 +33,13 @@
               <%= p.title %>
             </td>
             <td>
-              <%= link_to "Edit", edit_page_path(p), class: "btn btn-default" %>
+              <%= link_to "Edit", edit_page_path(p), class: "btn btn-default", method: :get %>
+            </td>
+            <td>
+              <%= link_to "View", page_path(p), class: "btn btn-default", method: :get %>
+            </td>
+            <td>
+              <%= link_to "Delete", page_path(p), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
             </td>
           </tr>
         <% end %>

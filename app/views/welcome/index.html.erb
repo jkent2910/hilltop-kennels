@@ -1,25 +1,23 @@
-
 	<div class="jumbotron jumbotron-image">
 		<div class="container">
 			<div class="page-header">
 			  <h1>Camp Hilltop<small> a haven from home</small></h1>
 			  <p>When only the best is good enough!</p>
 			</div>
-		  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+		  <p><%= link_to "Learn more", page_path(Page.find_by(title: "About Us").id), class: "btn btn-primary btn-lg" %></p>
 		</div>
 	</div>
-<div class="container">
+<div class="container welcome-container">
 	<div class="page-header col-md-8">
-  		<h1>Welcome to Hilltop Kennels!<br/><small>A premier kennel dedicated to providing the absolute best for your dog or cat.</small></h1>
-  		<p> Hilltop Kennels is one of the finest BOARDING and DAYCARE facilities in Cedar Rapids, Iowa. <br/>
+  		<h1>Welcome to Hilltop Kennels!<br/><small>A premier kennel dedicated to providing the absolute best for your pet.</small></h1>
+  		<p> Hilltop Kennels is one of the finest boarding and daycare facilities in Cedar Rapids, Iowa. <br/><br />
+      We are located at 1403 Wilson Ave. SW, just ten minutes from the Eastern Iowa Airport. The kennel sits on six beautiful acres with a lakeside view.
+      We provide a private indoor/outdoor run for each dog and separate area for boarding cats. <br/><br />
 
-We are located at 1403 Wilson Ave. SW, just ten minutes from the Eastern Iowa Airport. The kennel sits on six beautiful acres with a lakeside view. We provide a private indoor/outdoor run for each dog and separate area for BOARDING CATS. <br/>
+      <span style="font-style: italic;">Our mission is to provide a safe, clean, and enjoyable environment for all animals entrusted to our care.</span><br /><br />
+      MAKE YOUR RESERVATIONS TODAY - your pet will thank you for it!  Call 319-363-1054 to inquire or reserve. <br/><br />
 
-Our mission is to provide a safe, clean, and enjoyable environment for all animals entrusted to our care. MAKE YOUR RESERVATIONS TODAY - your pet will thank you for it! <br/>
-
-Call 319-363-1054 to inquire or reserve. <br/>
-
-» HEAR WHAT HILLTOP KENNELS CUSTOMERS ARE SAYING 
+      HEAR WHAT HILLTOP KENNELS CUSTOMERS ARE SAYING: <br /><br />
   		</p>
 	</div>
 	<div class="row">

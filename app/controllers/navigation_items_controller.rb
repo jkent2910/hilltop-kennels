@@ -10,6 +10,31 @@ class NavigationItemsController < ApplicationController
      @navigation_item = NavigationItem.new
   end
 
+  def edit
+    @navigation_item = NavigationItem.find(params[:id])
+  end
+
+  def update
+    @navigation_item = NavigationItem.find(params[:id])
+
+    respond_to do |format|
+      if @navigation_item.update(navigation_item_params)
+        format.html { redirect_to navigation_items_path, notice: "Navigation item updated" }
+      else
+        format.html { render :edit }
+      end
+    end
+  end
+
+  def destroy
+    @navigation_item = NavigationItem.find(params[:id])
+
+    @navigation_item.destroy
+    respond_to do |format|
+      format.html { redirect_to navigation_items_path, notice: "Navigation Item Deleted" }
+    end
+  end
+
   def create
     @navigation_item = NavigationItem.new(navigation_item_params)
 

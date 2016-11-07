@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
       <%= f.label :body %><br/>
-      <%= f.text_area :body, class: "page-editor form-control" %>
+      <%= f.text_area(:body, class: "page-editor form-control").html_safe %>
     </div>
     <div class="form-group">
       <%= f.label :navigation_item_id %><br/>

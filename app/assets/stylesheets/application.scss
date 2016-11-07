@@ -31,15 +31,16 @@
 }
 
 .jumbotron {
-    
 }
 
 .jumbotron-image {
 	margin-bottom: 0px;
-    background-image: url(/assets/pond.png); 
-    opacity: 0.2;
+    background-image: linear-gradient(rgba(226, 226, 200, 100), rgba(226, 226, 450, 0.5)), url(/assets/pond.png);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
-	
+}
+
+.welcome-container {
+  margin-bottom: 100px;
 }

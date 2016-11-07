@@ -4,7 +4,7 @@
       <p>You can create what shows up in your navigation here (navigation items: for example, Home, About Us, Hours & Location).</p>
       <p><%= link_to "Create New Navigation Item", new_navigation_item_path, class:"btn btn-primary" %></p>
     </div>
-    <div class="panel panel-default">
+    <div class="panel panel-default admin-table">
       <!-- Default panel contents -->
       <div class="panel-heading">Your Existing Navigation Items</div>
       <div class="panel-body">
@@ -15,19 +15,32 @@
       <table class="table">
         <tr>
           <th>
+            List Order
+          </th>
+          <th>
             Navigation Item Title
           </th>
           <th>
             Edit Navigation Item
           </th>
+          <th>
+            Delete Navigation Item
+          </th>
+
         </tr>
         <% @navigation_items.each do |n| %>
           <tr>
+            <td>
+              <%= n.list_order %>
+            </td>
             <td>
               <%= n.title %>
             </td>
             <td>
               <%= link_to "Edit", edit_navigation_item_path(n), class: "btn btn-default" %>
+            </td>
+            <td>
+              <%= link_to "Delete", navigation_item(n), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
             </td>
           </tr>
         <% end %>
