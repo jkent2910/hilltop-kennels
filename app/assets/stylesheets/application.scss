@@ -35,7 +35,7 @@
 
 .jumbotron-image {
 	margin-bottom: 0px;
-    background-image: linear-gradient(rgba(226, 226, 200, 100), rgba(226, 226, 450, 0.5)), url(/assets/pond.png);
+    background: linear-gradient(rgba(226, 226, 200, 100), rgba(226, 226, 450, 0.5)), image-url(/assets/pond.png);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
