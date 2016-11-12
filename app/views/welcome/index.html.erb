@@ -1,13 +1,13 @@
 	<div class="jumbotron jumbotron-image">
 		<div class="container">
-			<div class="page-header">
+			<div class="page-header header-minus-border">
         <div class="col-md-9">
-          <h1 style="color: #FC4A1a;">Camp Hilltop: a haven from home</h1>
+          <h1 style="color: rgb(231, 28, 36);">Camp Hilltop: a haven from home</h1>
           <p style="color:white;">When only the best is good enough!</p>
           <p><%= link_to "Learn more", page_path(Page.find_by(title: "About Us").id), class: "btn call-to-action-btn btn-lg" %></p>
         </div>
         <div class="col-md-3 logo-container">
-          <h2>Logo here</h2>
+          <h2><%= image_tag("logo.jpg", :size => "260x122") %></h2>
         </div>
         <div class="col-md-offset-9 col-md-3">
           <h4 style="color: white;">Be sure to follow us on </h4>
@@ -18,7 +18,7 @@
 		</div>
 	</div>
 <div class="container welcome-container">
-	<div class="page-header col-md-8">
+	<div class="page-header body-container col-md-8">
   		<h1>Welcome to Hilltop Kennels!<br/><small>A premier kennel dedicated to providing the absolute best for your pet.</small></h1>
   		<p> Hilltop Kennels is one of the finest boarding and daycare facilities in Cedar Rapids, Iowa. <br/><br />
       We are located at 1403 Wilson Ave. SW, just ten minutes from the Eastern Iowa Airport. The kennel sits on six beautiful acres with a lakeside view.
@@ -59,7 +59,7 @@
 	</div>
 	<div class="row">
 	  <div class="col-sm-6 col-md-4 sidebar-div">
-	    <div class="thumbnail">
+	    <div class="thumbnail thumbnail-custom">
 	      <%= image_tag("camp_hilltop.png") %>
 	      <div class="caption">
 	        <h3>RESERVE NOW</h3>
