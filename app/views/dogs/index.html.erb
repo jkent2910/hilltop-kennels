@@ -1,0 +1,42 @@
+<div class="container page-container">
+  <div class="jumbotron">
+    <h1>Hello, Admin!</h1>
+    <p>You can create dogs here</p>
+    <p><%= link_to "Create New Dog", new_dog_path, class:"btn btn-yellow" %></p>
+  </div>
+  <div class="panel panel-default admin-table">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Existing Dogs</div>
+    <div class="panel-body">
+      <p>Here, below, you can view and edit all the dogs that are already created.</p>
+    </div>
+
+    <!-- Table -->
+    <table class="table">
+      <tr>
+        <th>
+          Dog Name
+        </th>
+        <th>
+          Edit Dog
+        </th>
+        <th>
+          Delete Page
+        </th>
+      </tr>
+      <% @dogs.each do |d| %>
+          <tr>
+            <td>
+              <%= d.name %>
+            </td>
+            <td>
+              <%= link_to "Edit", edit_dog_path(d), class: "btn btn-default", method: :get %>
+            </td>
+            <td>
+              <%= link_to "Delete", dog_path(d), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
