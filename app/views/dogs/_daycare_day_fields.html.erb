@@ -1,0 +1,13 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :start_time %>
+    <br/>
+    <%= f.datetime_select :start_time %>
+  </div>
+  <div class="field">
+    <%= f.label :end_time %>
+    <br/>
+    <%= f.datetime_select :end_time %>
+  </div>
+  <%= link_to_remove_association "Remove Day", f %>
+</div>

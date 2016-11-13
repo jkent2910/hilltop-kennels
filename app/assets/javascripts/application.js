@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap-sprockets
+//= require cocoon
 //= require froala_editor.min.js
 //= require plugins/align.min.js
 //= require plugins/font_family.min.js

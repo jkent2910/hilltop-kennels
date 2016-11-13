@@ -5,6 +5,17 @@
       <%= f.label :name %><br/>
       <%= f.text_field :name, class: "form-control" %>
     </div>
+
+    <h3>Daycare Days</h3>
+    <div id="daycare_days">
+      <%= f.fields_for :daycare_days do |dd| %>
+      <%= render 'daycare_day_fields', f: dd %>
+      <% end %>
+      <div class="links">
+        <%= link_to_add_association 'Add Day', f, :daycare_days %>
+      </div>
+    </div>
+
     <div class="col-md-12">
       <div class="edit-save actions">
         <%= f.submit class: 'btn btn-md btn-teal' %>

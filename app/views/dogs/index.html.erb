@@ -39,4 +39,14 @@
       <% end %>
     </table>
   </div>
+
+  <h2>Calendar of Dogs</h2>
+  <%= month_calendar events: @daycare_days do |date, daycare_days| %>
+      <%= date %>
+      <% daycare_days.each do |d| %>
+      <div>
+        <%= d.dog.name %>
+      </div>
+      <% end %>
+  <% end %>
 </div>

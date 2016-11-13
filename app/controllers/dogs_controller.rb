@@ -4,6 +4,7 @@ class DogsController < ApplicationController
 
   def index
     @dogs = Dog.all
+    @daycare_days = DaycareDay.all
   end
 
   def new
@@ -54,7 +55,7 @@ class DogsController < ApplicationController
 
   private
   def dog_params
-    params.require(:dog).permit(:name)
+    params.require(:dog).permit(:name, :start_time, :end_time, daycare_days_attributes: [:id, :start_time, :end_time, :_destroy])
   end
 
   def ensure_admin
