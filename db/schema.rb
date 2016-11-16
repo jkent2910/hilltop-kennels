@@ -11,18 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113200511) do
+ActiveRecord::Schema.define(version: 20161116004938) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "daycare_days", force: :cascade do |t|
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.integer  "dog_id"
+    t.date     "start_time"
+    t.date     "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "daycare_days_dogs", id: false, force: :cascade do |t|
+    t.integer "dog_id"
+    t.integer "daycare_day_id"
+  end
+
+  add_index "daycare_days_dogs", ["daycare_day_id"], name: "index_daycare_days_dogs_on_daycare_day_id", using: :btree
+  add_index "daycare_days_dogs", ["dog_id"], name: "index_daycare_days_dogs_on_dog_id", using: :btree
 
   create_table "dogs", force: :cascade do |t|
     t.string   "name"

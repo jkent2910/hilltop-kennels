@@ -1,3 +1,3 @@
 class DaycareDay < ActiveRecord::Base
-  belongs_to :dog
+  has_and_belongs_to_many :dogs
 end

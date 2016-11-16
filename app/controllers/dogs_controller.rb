@@ -1,8 +1,13 @@
 class DogsController < ApplicationController
 
-  before_action :ensure_admin, except: [:show]
+  before_action :ensure_admin, except: [:show, :daycare_schedule]
 
   def index
+    @dogs = Dog.all
+    @daycare_days = DaycareDay.all
+  end
+
+  def daycare_schedule
     @dogs = Dog.all
     @daycare_days = DaycareDay.all
   end
@@ -55,7 +60,7 @@ class DogsController < ApplicationController
 
   private
   def dog_params
-    params.require(:dog).permit(:name, :start_time, :end_time, daycare_days_attributes: [:id, :start_time, :end_time, :_destroy])
+    params.require(:dog).permit(:name, daycare_day_ids: [], daycare_days_attributes: [:id, :start_time, :end_time, :_destroy])
   end
 
   def ensure_admin

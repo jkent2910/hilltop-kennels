@@ -8,8 +8,10 @@ Rails.application.routes.draw do
    resources :navigation_items
    resources :pages
    resources :dogs
+   resources :daycare_days
 
   get '/' =>'welcome#index', as: 'home'
+  get '/daycare_schedule' => 'dogs#daycare_schedule', as: 'daycare_schedule'
 
 
 end

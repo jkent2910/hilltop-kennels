@@ -1,0 +1,19 @@
+
+<%= form_for (@daycare_day) do |f| %>
+
+    <h2>Select Dogs for <%= params[:date] %></h2>
+
+    <%= hidden_field_tag :start_time, params[:date] %>
+    <%= hidden_field_tag :end_time, params[:date] %>
+
+    <%= f.collection_check_boxes :dog_ids, Dog.all, :id, :name do |d| %><br />
+        <%= d.check_box %>
+        <%= d.label %>
+    <% end %>
+
+    <div class="col-md-12">
+      <div class="edit-save actions">
+        <%= f.submit "Add Dogs", class: 'btn btn-md btn-teal' %>
+      </div>
+    </div>
+<% end %>

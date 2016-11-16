@@ -42,10 +42,13 @@
 
   <h2>Calendar of Dogs</h2>
   <%= month_calendar events: @daycare_days do |date, daycare_days| %>
-      <%= date %>
+      <%= date %><br />
+      <%= link_to "Add Dog", new_daycare_day_path(date: date) %>
       <% daycare_days.each do |d| %>
       <div>
-        <%= d.dog.name %>
+        <% d.dogs.each do |dog| %>
+        <%= dog.name %><br />
+        <% end %>
       </div>
       <% end %>
   <% end %>
