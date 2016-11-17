@@ -15,5 +15,8 @@ Rails.application.routes.draw do
 
   post 'daycare_days/remove_dog' => 'daycare_days#remove_dog'
 
+  post '/welcome/contacts' => 'welcome#contact', as: 'contacts_form'
+
+
 
 end

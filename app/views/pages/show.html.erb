@@ -3,3 +3,26 @@
     <%= @page.body.html_safe %>
   </div>
 </div>
+
+<div class="container contact-us-container">
+  <h2>Contact Us</h2>
+  <%= form_tag(contacts_form_path, :method => 'post', :class => 'contact-us') do %>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Name</label>
+        <%= text_field_tag 'name', nil, {placeholder: "Name", class: "form-control", :required => 'required'} %><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <%= text_field_tag 'email', nil, {placeholder: "Email", class: "form-control"} %><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Phone number</label>
+        <%= text_field_tag 'phone', nil, {placeholder: "Phone", class: "form-control"} %><br />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Question or Comment</label>
+        <%= text_area_tag 'question', nil, {placeholder: "Question or Comment", class: "form-control"} %><br />
+      </div>
+      <%= submit_tag "Submit", class: 'btn btn-md btn-default' %>
+  <% end %>
+</div>
