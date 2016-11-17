@@ -42,3 +42,14 @@
 $(function() {
     $('.page-editor').froalaEditor()
 });
+
+function remove_dog (el) {
+    $.ajax({
+        type: "POST",
+        url: "/daycare_days/remove_dog",
+        data: {dog_id: (el.getAttribute("dog_id")),
+            daycare_day_id: (el.getAttribute("daycare_day_id")),
+            date: (el.getAttribute("date")
+            )}
+    });
+}

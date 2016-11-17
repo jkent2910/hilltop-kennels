@@ -43,11 +43,12 @@
   <h2>Calendar of Dogs</h2>
   <%= month_calendar events: @daycare_days do |date, daycare_days| %>
       <%= date %><br />
-      <%= link_to "Add Dog", new_daycare_day_path(date: date) %>
+      <%= link_to "Add Dog", new_daycare_day_path(date: date) %><br />
       <% daycare_days.each do |d| %>
       <div>
         <% d.dogs.each do |dog| %>
-        <%= dog.name %><br />
+        <%= dog.name %>
+            <button class="remove-dog btn-danger btn-xs" onclick="remove_dog(this)" daycare_day_id="<%= d.id %>" date="<%= date %>" dog_id="<%= dog.id %>">Remove <%= dog.name %></button><br />
         <% end %>
       </div>
       <% end %>

@@ -15,7 +15,7 @@ class DaycareDaysController < ApplicationController
     @daycare_day = DaycareDay.find(params[:id])
     respond_to do |format|
       if @daycare_day.update(daycare_day_params)
-        format.html { redirect_to dogs_path, notice: "Dog added" }
+        format.html { redirect_to dogs_path, notice: "Dog(s) updated!" }
       else
         format.html { render :edit }
       end
@@ -24,11 +24,12 @@ class DaycareDaysController < ApplicationController
 
   def create
     @daycare_day = DaycareDay.new(daycare_day_params)
+
     @daycare_day.start_time = params[:start_time]
     @daycare_day.end_time = params[:end_time]
     respond_to do |format|
       if @daycare_day.save
-        format.html { redirect_to dogs_path, notice: 'Dog Created' }
+        format.html { redirect_to dogs_path, notice: 'Dog(s) added!' }
         format.js
       else
         format.html { render :new }
@@ -48,6 +49,12 @@ class DaycareDaysController < ApplicationController
 
   def show
     @daycare_day = DaycareDay.find(params[:id])
+  end
+
+  def remove_dog
+    @daycare_day = DaycareDay.find(params[:daycare_day_id])
+    @daycare_day.dogs.destroy(params[:dog_id])
+    redirect_to dogs_path, notice: "Dog removed"
   end
 
   private
