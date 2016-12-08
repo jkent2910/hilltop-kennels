@@ -28,7 +28,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Hilltop Kennels</a>
+        <%= link_to "Hilltop Kennels", root_path, class: "navbar-brand" %>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
@@ -56,8 +56,8 @@
                 <a href="#" class="dropdown-toggle admin-nav-dropdown" data-toggle="dropdown">Admin Tools<b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="#"><%= link_to "Edit Dogs", dogs_path %></a></li>
-                    <li><a href="#"><%= link_to "Edit Navigiation Items", navigation_items_path %></a></li>
                     <li><%= link_to "Edit Pages", pages_path %></li>
+                    <li><a href="#"><%= link_to "Edit Navigiation Items", navigation_items_path %></a></li>
                     <li><%= link_to "Sign Out", destroy_user_session_path %></li>
                   </ul>
               </li>
@@ -95,9 +95,9 @@
 <nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
   	<ul class="nav navbar-nav navbar-right">
-    	<li><a href="#">1403 Wilson Ave SW ~ Cedar Rapids, IA</a></li>
-    	<li><a href="#">Google Map</a></li>
-    	<li><a href="#">(319) 363-1054</a></li>
+    	<li><a href="https://goo.gl/maps/uiqyi7GXwAD2">1403 Wilson Ave SW ~ Cedar Rapids, IA</a></li>
+    	<li><a href="https://goo.gl/maps/uiqyi7GXwAD2">Google Map</a></li>
+    	<li><a href="https://goo.gl/maps/uiqyi7GXwAD2">(319) 363-1054</a></li>
     	<li><a href="#">10 Minutes from the Eastern IA Airport</a></li>
     	<li><a href="#">Hilltop Kennels © 2016 - State Licensed and Insured</a></li>
 	</ul>
