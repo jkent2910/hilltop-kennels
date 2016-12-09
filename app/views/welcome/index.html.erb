@@ -1,15 +1,16 @@
-	<div class="jumbotron jumbotron-image">
+	<div class="jumbotron jumbotron-image" style="height:500px;">
 		<div class="container">
-			<div class="page-header header-minus-border">
+			<div class="page-header header-minus-border" style="margin-top: 260px;">
         <div class="col-md-9">
           <h1 style="color: #1E503E;" class="header-h1">Hilltop Kennels</h1>
           <p><%= link_to "Learn more", page_path(Page.find_by(title: "About Us").id), class: "btn call-to-action-btn btn-lg" %></p>
         </div>
-        <div class="col-md-offset-9 col-md-3">
-          <h4 style="color: white;">Be sure to follow us on </h4>
+        <div class="col-md-3 text-right" style="background-color: #529065; color: white; border-radius: 4px; border:3px solid white; margin-top: 50px;text-align: right;">
+          
           <%= link_to "https://www.facebook.com/HilltopKennelsIowa/" do %>
-            <%= fa_icon("facebook-square 4x", class: 'facebook-icon') %>
+            <%= fa_icon("facebook-square 4x", class: 'facebook-icon', :style =>'color:white;') %>
           <% end %>
+          <h4>Be sure to follow us on </h4>
         </div>
 			</div>
 
