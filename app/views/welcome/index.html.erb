@@ -3,7 +3,9 @@
 			<div class="page-header header-minus-border" style="margin-top: 260px;">
         <div class="col-md-9">
           <h1 style="color: #1E503E;" class="header-h1">Hilltop Kennels</h1>
-          <p><%= link_to "Learn more", page_path(Page.find_by(title: "About Us").id), class: "btn call-to-action-btn btn-lg" %></p>
+          <% unless Page.find_by(title: "About Us").nil? %>
+            <p><%= link_to "Learn more", page_path(Page.find_by(title: "About Us").id), class: "btn call-to-action-btn btn-lg" %></p>
+          <% end %>
         </div>
         <div class="col-md-3 text-right" style="background-color: #529065; color: white; border-radius: 4px; border:3px solid white; margin-top: 50px;text-align: right;">
           
@@ -60,9 +62,14 @@
 	      <div class="caption">
 	        <h3>RESERVE NOW</h3>
 	        <p>We offer spacious, climate-controlled playrooms that are 100% fully supervised. We fill up quickly.</p>
-	        <p><%= link_to "Reserve", page_path(Page.find_by(title: "Reservations").id), class: "btn btn-teal" %>
-             <%= link_to "More Info", page_path(Page.find_by(title: "About Us").id), class: "btn btn-yellow" %>
-          </p>
+          <% if Page.find_by(title: "Reservations").nil? %>
+          <% else %>
+              <p><%= link_to "Reserve", page_path(Page.find_by(title: "Reservations").id), class: "btn btn-teal" %></p>
+          <% end %>
+          <% if Page.find_by(title: "About Us").nil? %>
+          <% else %>
+                <p><%= link_to "More Info", page_path(Page.find_by(title: "About Us").id), class: "btn btn-yellow" %></p>
+          <% end %>
 	      </div>
 	    </div>
       <div class="fb-page" data-href="https://www.facebook.com/HilltopKennelsIowa/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/HilltopKennelsIowa/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/HilltopKennelsIowa/">Hilltop Kennels</a></blockquote></div>
