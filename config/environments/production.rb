@@ -78,4 +78,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.consider_all_requests_local = true
+
+  ActionMailer::Base.smtp_settings = {
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :domain => 'hilltopkennelsiowa.com',
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+  }
+
 end
