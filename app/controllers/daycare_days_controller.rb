@@ -1,7 +1,5 @@
 class DaycareDaysController < ApplicationController
 
-  before_action :ensure_admin
-
   def new
     @daycare_day = DaycareDay.new
     @dogs = Dog.all

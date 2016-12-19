@@ -1,7 +1,5 @@
 class DogsController < ApplicationController
 
-  before_action :ensure_admin, except: [:show, :daycare_schedule]
-
   def index
     @dogs = Dog.all
     @daycare_days = DaycareDay.all
@@ -61,12 +59,6 @@ class DogsController < ApplicationController
   private
   def dog_params
     params.require(:dog).permit(:name, daycare_day_ids: [], daycare_days_attributes: [:id, :start_time, :end_time, :_destroy])
-  end
-
-  def ensure_admin
-    unless user_signed_in? && current_user.admin?
-      redirect_to root_path, notice: "You're not allowed to perform that action."
-    end
   end
 
 end
