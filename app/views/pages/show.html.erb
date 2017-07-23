@@ -1,18 +1,18 @@
 <div class="container page-container">
-  <div class="col-md-9">
+  <div class="col-md-12">
     <% if @page.title == "About Us" %>
         <%= image_tag("employees.jpg", :style => "height: 400px; width: 700px;") %>
     <% elsif @page.title == "Boarding" %>
-        <%= image_tag("pond.png", :sytle => "height: 400px; width: 700px") %>
-        <%= image_tag("kennels.jpg", :style => "height: 400px; width: 700px") %>
+        <%= image_tag("pond.png", :sytle => "height: 400px; width: 700px") %> <br />
+        <%= image_tag("kennels.JPG", :style => "height: 400px; width: 700px") %>
     <% elsif @page.title == "Daycare" %>
-        <%= image_tag("daycare.jpg", :sytle => "height: 400px; width: 700px") %>
-        <%= image_tag("daycareoutside.jpg", :style => "height: 400px; width: 700px") %>
+        <%= image_tag("daycare.JPG", :sytle => "height: 400px; width: 700px") %><br />
+        <%= image_tag("daycareoutside.jpg", :style => "height: 400px; width: 700px") %><br />
         <%= image_tag("daycareinside.jpg", :style => "height: 400px; width: 700px") %>
     <% elsif @page.title == "Hours & Location" %>
         <%= image_tag("hilltopbuilding.jpg", :style => "height: 400px; width: 700px") %>
     <% elsif @page.title == "Grooming" %>
-        <%= image_tag("groom room.jpg", :sytle => "height: 400px; width: 700px") %>
+        <%= image_tag("groom room.jpg", :sytle => "height: 400px; width: 700px") %><br />
         <%= image_tag("groom.jpg", :style => "height: 400px; width: 700px") %>
     <% elsif @page.title == "Doggie Shuttle" %>
         <%= image_tag("bus2.jpg", :sytle => "height: 400px; width: 700px") %>
