@@ -40,4 +40,16 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_permissions => 'public-read',
+      :s3_credentials => {
+          :bucket => ENV['S3_DEVELOPMENT_BUCKET'],
+          :access_key_id => ENV['ACCESS_KEY_ID'],
+          :secret_access_key => ENV['SECRET_ACCESS_KEY_ID'],
+          :s3_region => ENV['S3_REGION'],
+          :s3_host_name => ENV['S3_HOST_NAME']
+      }
+  }
 end

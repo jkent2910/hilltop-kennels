@@ -89,4 +89,15 @@ Rails.application.configure do
       :enable_starttls_auto => true
   }
 
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_permissions => 'public-read',
+      :s3_credentials => {
+          :bucket => ENV['S3_PRODUCTION_BUCKET'],
+          :access_key_id => ENV['ACCESS_KEY_ID'],
+          :secret_access_key => ENV['SECRET_ACCESS_KEY_ID'],
+          :s3_region => ENV['S3_REGION'],
+          :s3_host_name => ENV['S3_HOST_NAME']
+      }
+  }
 end
