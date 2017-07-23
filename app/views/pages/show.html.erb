@@ -2,7 +2,21 @@
   <div class="col-md-9">
     <% if @page.title == "About Us" %>
         <%= image_tag("employees.jpg", :style => "height: 400px; width: 700px;") %>
-    <% end %>
+    <% elsif @page.title == "Boarding" %>
+        <%= image_tag("pond.png", :sytle => "height: 400px; width: 700px") %>
+        <%= image_tag("kennels.jpg", :style => "height: 400px; width: 700px") %>
+    <% elsif @page.title == "Daycare" %>
+        <%= image_tag("daycare.jpg", :sytle => "height: 400px; width: 700px") %>
+        <%= image_tag("daycareoutside.jpg", :style => "height: 400px; width: 700px") %>
+        <%= image_tag("daycareinside.jpg", :style => "height: 400px; width: 700px") %>
+    <% elsif @page.title == "Hours & Location" %>
+        <%= image_tag("hilltopbuilding.jpg", :style => "height: 400px; width: 700px") %>
+    <% elsif @page.title == "Grooming" %>
+        <%= image_tag("groom room.jpg", :sytle => "height: 400px; width: 700px") %>
+        <%= image_tag("groom.jpg", :style => "height: 400px; width: 700px") %>
+    <% elsif @page.title == "Doggie Shuttle" %>
+        <%= image_tag("bus2.jpg", :sytle => "height: 400px; width: 700px") %>
+  <% end %>
   </div>
   <div class="fr-view">
     <%= @page.body.html_safe %>
